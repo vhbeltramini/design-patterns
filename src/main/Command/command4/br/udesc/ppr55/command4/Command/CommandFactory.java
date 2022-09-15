@@ -12,13 +12,10 @@ public class CommandFactory {
 	private Map<String, Class<? extends Command>> comandos = new HashMap<>();
 	private Observer observer;
 
-	public CommandFactory(Observer observer) {
+	public CommandFactory(/* Observer observer */) {
 
-		comandos.put("new", NewCommand.class);
-		comandos.put("delete", DeleteCommand.class);
-		comandos.put("get", GetCommand.class);
-		comandos.put("all", AllCommand.class);
-		this.observer = observer;
+		comandos.put("circ", AdicionarCirculo.class);
+		comandos.put("quad", AdicionarQuadrado.class);
 	}
 
 	public Command getCommand(String comando, String[] dados) throws Exception {
