@@ -27,7 +27,7 @@ public class WebSite implements Observer {
                 "URL='" + getUrl() + '\'' +
                 "Revista='" + revista.getNomeRevista() + '\'' +
                 "Edicao='" + edicao.getNumeroEdicao() + '\'' +
-                "Artigo='" + edicao.getArtigos().stream().map(Artigo::getTituloArtigo).toList() + '\'' +
+                "Artigo='" + edicao.getArtigos().stream().map(Artigo::getTituloArtigo) + '\'' +
                 '}');
     }
 

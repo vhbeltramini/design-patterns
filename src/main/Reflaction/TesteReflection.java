@@ -1,4 +1,4 @@
-package main.reflaction;
+package main.Reflaction;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public class TesteReflection {
 
 	public static void main(String[] args) throws Exception {
-		Class<?> clazz = Class.forName("main.reflaction.Cliente");
+		Class<?> clazz = Class.forName("main.Reflaction.Cliente");
 		
 		Constructor<?> constr = clazz.getConstructor();
 		Object cliente1 = constr.newInstance();
