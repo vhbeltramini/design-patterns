@@ -1,8 +1,6 @@
 package main.AbstractFactory.abstractfactory3.controle.uc;
 
-import main.AbstractFactory.abstractfactory3.controle.abstractfactory.AbstractFreteFactory;
-import main.AbstractFactory.abstractfactory3.controle.abstractfactory.Destino;
-import main.AbstractFactory.abstractfactory3.controle.abstractfactory.Encomenda;
+import main.AbstractFactory.abstractfactory3.controle.abstractfactory.*;
 import main.AbstractFactory.abstractfactory3.controle.observer.Observador;
 
 import java.util.ArrayList;
@@ -42,9 +40,11 @@ public class CalculadoraFreteImpl implements CalculadoraFreteControle {
 	public void setTipoFrete(String tipoFrete) {
 
 		if (tipoFrete.equals("Correio")) {
+			freteFactory = new CorreioFreteFactory();
 			// criar o concretefactory de correio
 			// this.freteFactory = new <nome da tua classe>();
 		} else {
+			freteFactory = new NorthAmerciaFreteFactory();
 			// criar o concretefactory de exportar para america do norte
 			// this.freteFactory = new <nome da tua classe>();
 		}

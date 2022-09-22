@@ -60,7 +60,7 @@ public abstract class Encomenda {
 		return destino;
 	}
 	
-	public void setDestino(Destino destino) throws Exception {
+	public void setDestino(Destino destino) {
 		this.destino = destino;
 	}
 	

@@ -31,7 +31,7 @@ public class TelaCliente {
 	private static DadosFactory createFactory() throws Exception {
 		// com base na leitura de algum arquivo de configuracao
 	   	Properties props = new Properties();
-    	props.load(new InputStreamReader(new FileInputStream("conf.properties")));
+    	props.load(new InputStreamReader(new FileInputStream(new File("conf.properties"))));
     	String factory = props.getProperty("factory");
     	if (factory.equals("xml"))
     		return new DadosXML();
