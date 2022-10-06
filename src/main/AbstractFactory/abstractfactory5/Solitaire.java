@@ -1,9 +1,13 @@
 package main.AbstractFactory.abstractfactory5;
 
+import main.AbstractFactory.abstractfactory5.abstractfactory.CardAbstractFactory;
+import main.AbstractFactory.abstractfactory5.abstractfactory.CardDafaultFactory;
+import main.AbstractFactory.abstractfactory5.abstractfactory.CardProvaFactory;
 import main.AbstractFactory.abstractfactory5.cards.Card;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 import java.util.Properties;
 import javax.swing.*;
 
@@ -28,6 +32,8 @@ public class Solitaire extends JFrame {
 	private int numCardsInContainer = 0; // the number of cards that have
 											// been dealt
 
+	private CardAbstractFactory cardAbstractFactory;
+
 	// pt is the array of points where the cards are displayed
 	// We limit the size to 21, since 21 cards MUST have a set
 	// Most of the time only the first 12 positions are used
@@ -41,7 +47,7 @@ public class Solitaire extends JFrame {
 			new Point(970, 430), };
 
 	// The constructor sets up the Frame and adds some cards to it.
-	public Solitaire() {
+	public Solitaire() throws IOException {
 		// Initialize the JFrame
 		super("Solitaire Game");
 		frame = this;
@@ -49,12 +55,13 @@ public class Solitaire extends JFrame {
 		c = (JComponent) getContentPane();
 		c.setLayout(null);
 		Properties props = new Properties();
-//		props.load(new InputStreamReader(new FileInputStream(new File("conf.properties"))));
-//		String factory = props.getProperty("type");
-//		if (factory.equals("prova"))
-//			 new DadosXML();
-//		else
-//			return new DadosRandomAccess();
+		props.load(new InputStreamReader(new FileInputStream(new File("conf.properties"))));
+		String factory = props.getProperty("type");
+		if (factory.equals("prova"))
+			cardAbstractFactory = new CardProvaFactory();
+		else
+			cardAbstractFactory = new CardDafaultFactory();
+
 		// add the menu bar to the application
 		setJMenuBar(new SetMenuBar());
 
@@ -62,7 +69,7 @@ public class Solitaire extends JFrame {
 		set = new Set();
 
 		// new up a deck and shuffle it
-		deck = new Deck();
+		deck = new Deck(cardAbstractFactory);
 		deck.shuffle();
 
 		// deal twelve cards to the display
@@ -304,7 +311,7 @@ public class Solitaire extends JFrame {
 
 					// Start with a fresh deck of cards
 					set = new Set();
-					deck = new Deck();
+					deck = new Deck(cardAbstractFactory);
 					deck.shuffle();
 
 					// Deal twelve cards to the display
@@ -359,7 +366,7 @@ public class Solitaire extends JFrame {
 	}
 
 	// execute application
-	public static void main(String args[]) {
+	public static void main(String args[]) throws IOException {
 		new Solitaire();
 	}
 }

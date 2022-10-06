@@ -29,6 +29,8 @@ public class TelaListarPacientes extends javax.swing.JFrame implements ObserverC
         this.controller = new ControladorListarPacientes();
         this.controller.anexar(this);
 
+
+
         pacienteTableModel = new PacienteTableModel(controller.getPacientes());
         setTableModel(pacienteTableModel);
 

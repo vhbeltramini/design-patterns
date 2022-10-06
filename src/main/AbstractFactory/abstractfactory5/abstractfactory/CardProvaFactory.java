@@ -1,23 +1,21 @@
 package main.AbstractFactory.abstractfactory5.abstractfactory;
 
-import main.AbstractFactory.abstractfactory5.cards.Diamond;
-import main.AbstractFactory.abstractfactory5.cards.Oval;
-import main.AbstractFactory.abstractfactory5.cards.Squiggle;
+import main.AbstractFactory.abstractfactory5.cards.*;
 
 public class CardProvaFactory extends CardAbstractFactory {
 
     @Override
-    Oval createCartOval() {
-        return null;
+    public Symbol getCartOval() {
+        return OvalProva.getInstance();
     }
 
     @Override
-    Diamond createCartDiamond() {
-        return null;
+    public Symbol getCartDiamond() {
+        return DiamondProva.getInstance();
     }
 
     @Override
-    Squiggle createCartSquiggle() {
-        return null;
+    public Symbol getCartSquiggle() {
+        return SquiggleProva.getInstance();
     }
 }

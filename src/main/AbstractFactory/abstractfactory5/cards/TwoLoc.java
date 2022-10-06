@@ -1,6 +1,6 @@
 package main.AbstractFactory.abstractfactory5.cards;
 
-class TwoLoc extends Location {
+public class TwoLoc extends Location {
     private static Location instance = new TwoLoc();
 
     public static Location getInstance() {

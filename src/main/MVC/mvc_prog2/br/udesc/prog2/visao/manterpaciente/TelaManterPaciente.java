@@ -23,8 +23,6 @@ public class TelaManterPaciente extends javax.swing.JFrame {
 
 
         addAcoes();
-
-
     }
 
     private void addAcoes() {

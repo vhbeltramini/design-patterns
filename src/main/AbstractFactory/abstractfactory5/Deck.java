@@ -2,10 +2,11 @@ package main.AbstractFactory.abstractfactory5;// Deck.java
 // This file implements a Deck of Solitaire cards
 
 
+import main.AbstractFactory.abstractfactory5.abstractfactory.CardAbstractFactory;
 import main.AbstractFactory.abstractfactory5.cards.*;
 
 import java.awt.*;
-import java.util.*;
+import java.util.Random;
 
 
 // The Deck class contains each of the 81 unique Solitaire cards 
@@ -16,7 +17,7 @@ public class Deck {
 
     // the constructor initalizes the array and then each
     // card in the array
-    public Deck () {
+    public Deck (CardAbstractFactory cardAbstractFactory) {
         deck = new Card[NUMCARDS];
         top = 0;
 
@@ -24,7 +25,7 @@ public class Deck {
         // By reusing the same properties, we allow == and != to work
         Color colours[] = {Color.red, new Color(0, 150, 0), new Color(150, 0, 255)};
         Shading shadings[] = {Filled.getInstance(), Outlined.getInstance(), Striped.getInstance()};
-        Symbol symbols[] = {Oval.getInstance(), Diamond.getInstance(), Squiggle.getInstance()};
+        Symbol symbols[] = {cardAbstractFactory.getCartOval(), cardAbstractFactory.getCartDiamond(), cardAbstractFactory.getCartSquiggle()};
         Location locations[] = {OneLoc.getInstance(), TwoLoc.getInstance(), ThreeLoc.getInstance()};
 
         for (int i=0; i<NUMCARDS; i++) {

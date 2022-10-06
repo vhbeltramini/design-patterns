@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 // Striped represents the Shading for striped cards
-class Striped extends Shading {
+public class Striped extends Shading {
 
     // We have exactly one instance of the striped class
     private static Striped instance = new Striped();

@@ -1,13 +1,11 @@
 package main.AbstractFactory.abstractfactory5.abstractfactory;
 
-import main.AbstractFactory.abstractfactory5.cards.Diamond;
-import main.AbstractFactory.abstractfactory5.cards.Oval;
-import main.AbstractFactory.abstractfactory5.cards.Squiggle;
+import main.AbstractFactory.abstractfactory5.cards.Symbol;
 
 public abstract class CardAbstractFactory {
 
-    abstract Oval createCartOval();
-    abstract Diamond createCartDiamond();
-    abstract Squiggle createCartSquiggle();
+    public abstract Symbol getCartOval();
+    public abstract Symbol getCartDiamond();
+    public abstract Symbol getCartSquiggle();
 
 }
