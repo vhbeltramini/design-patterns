@@ -1,28 +1,23 @@
 package main.Strategy.strategy3.jogo;
 
+import main.Strategy.strategy3.strategy.Anda;
+import main.Strategy.strategy3.strategy.Movimentacao;
+
 public class Mecha {
 
-	private boolean estahVoando;
+	private Movimentacao movimentacao;
 
 	public void mover(int x, int y) throws Exception {
-		if (estahVoando) {
-			
-			Thread.sleep(100); // chega mais rapido ao destino
-			System.out.println("Voando");
-			
-		} else {
-			
-			Thread.sleep(1000); // demora mais para chegar ao destino
-			System.out.println("Andando");
+		getMovimentacao().mover(this);
+	}
+	public Movimentacao getMovimentacao() {
+		if (movimentacao == null ) {
+			movimentacao = new Anda();
 		}
+		return movimentacao;
 	}
-	
-	public void entrarModoVoo() {
-		this.estahVoando = true;
+
+	public void setMovimentacao(Movimentacao movimentacao) {
+		this.movimentacao = movimentacao;
 	}
-	
-	public void entrarModoAndar() {
-		this.estahVoando = false;
-	}
-	
 }
