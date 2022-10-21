@@ -29,7 +29,6 @@ public class CommandInvoker {
 	
 	public void undo() {
 		try {
-
 			Command comm = todos.remove(todos.size()-1);
 			comm.undo();
 			undo.add(comm);

@@ -41,12 +41,10 @@ public class SistemaV2 {
 			
 			switch (op) {
 				case 3: 
-					    
 					    ci.undo();
 				  		break;
 			  
 				case 4: 
-					    
 					    ci.redo();
 						break;
 

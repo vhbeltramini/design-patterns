@@ -117,8 +117,7 @@ public class PaintFixo extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		String action = event.getActionCommand();
 
-		
-		if (action.equals("quadrado")) {
+ 		if (action.equals("quadrado")) {
 			Class<? extends Command> commClass = comandos.get(action);
 
 			try {
