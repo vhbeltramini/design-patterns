@@ -1,5 +1,7 @@
 package main.Visitor.visitor5.taxi;
 
+import main.Visitor.visitor5.visitor.VisitorTaxi;
+
 public class Taxi {
 
 	private int pontoTaxi;
@@ -7,24 +9,24 @@ public class Taxi {
 	private boolean ocupado;
 	
 	public Taxi(int numeroRegistro, int pontoTaxi) {
-
 		this.numeroRegistro = numeroRegistro;
 		this.pontoTaxi = pontoTaxi;
-		
 	}
 	
 	public int getPontoTaxi() {
 		return pontoTaxi;
 	}
-	
+
 	public boolean isOcupado() {
 		return ocupado;
 	}
 
 	public void atender(Cliente cliente) {
-		
 		System.out.println("Taxi " + numeroRegistro + " do ponto " + pontoTaxi + " atendendo " + cliente.getNumeroTelefone()+ ".");
 		this.ocupado = true;
 	}
-	
+
+	public void accept(VisitorTaxi visitor) throws Exception {
+		visitor.visitTaxi(this);
+	}
 }

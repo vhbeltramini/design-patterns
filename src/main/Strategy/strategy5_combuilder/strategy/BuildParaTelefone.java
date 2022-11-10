@@ -7,8 +7,7 @@ public class BuildParaTelefone extends PessoaBuilders {
 	@Override
 	public Pessoa build(Pessoa pessoa) {
 
-		Pessoa builder = new PessoaBuilders()
-		.build(pessoa).
-		return ;
+
+		return new BuildParaTelefone().build(pessoa);
 	}
 }

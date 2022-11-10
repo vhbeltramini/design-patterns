@@ -85,15 +85,10 @@ public class CadastroContato extends JFrame {
 
 		JRadioButton jrCompleto = new JRadioButton("Completo");
 		jrCompleto.setActionCommand("strategy5_combuilder.strategy.BuildPessoa");
-		jrCompleto.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				jtfEmail.setEnabled(true);
-				jtfEndereco.setEnabled(true);
-				jtfTelefone.setEnabled(true);
-			}
-
+		jrCompleto.addActionListener(arg0 -> {
+			jtfEmail.setEnabled(true);
+			jtfEndereco.setEnabled(true);
+			jtfTelefone.setEnabled(true);
 		});
 		jrCompleto.setSelected(true);
 		jPanel2.add(jrCompleto);

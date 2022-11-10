@@ -39,7 +39,8 @@ public class Pessoa {
 		private String telefone;
 		private String email;
 		private PessoaBuilder pessoaBuilder;
-		
+		private Pessoa pessoa;
+
 		public void reset() {
 			this.nome = null;
 			this.endereco = null;
@@ -56,7 +57,7 @@ public class Pessoa {
 		}
 
 		public Pessoa build() {
-			return getPessoaBuilder().build(this);
+			return getPessoaBuilder().build();
 		}
 		
 		public PessoaBuilder nome(String nome) {

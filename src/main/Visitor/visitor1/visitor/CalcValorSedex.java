@@ -8,7 +8,6 @@ public class CalcValorSedex implements Visitor {
 	
 	@Override
 	public void visit(ItemPedido itemPedido) {
-		 
 		valor += itemPedido.getProduto().getPeso() * 0.5 * itemPedido.getQtdade();
 	}
 	

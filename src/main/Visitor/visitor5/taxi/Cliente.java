@@ -1,5 +1,7 @@
 package main.Visitor.visitor5.taxi;
 
+import main.Visitor.visitor5.visitor.VisitorTaxi;
+
 public class Cliente {
 
 	private String numeroTelefone;
@@ -18,5 +20,5 @@ public class Cliente {
 	public int getPontoProximo() {
 		return pontoProximo;
 	}
-	
+
 }

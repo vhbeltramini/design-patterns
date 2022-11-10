@@ -1,5 +1,7 @@
 package main.Visitor.visitor4.personagens;
 
+import main.Visitor.visitor4.visitor.VistorAtaque;
+
 public abstract class Personagem {
 
 	private int pontoVida;
@@ -21,7 +23,7 @@ public abstract class Personagem {
 	public int getForcaAtaque() {
 		return forcaAtaque;
 	}
-	
-	
-	
+
+	public abstract void accept(VistorAtaque visitor) throws Exception;
+
 }

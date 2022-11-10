@@ -14,9 +14,7 @@ public class Pedido {
 	}
 	
 	public void accept(Visitor visitor) throws Exception {
-		
-		for (ItemPedido item:itensPedido) 
+		for (ItemPedido item:itensPedido)
 			item.accept(visitor);
-		
 	}
 }

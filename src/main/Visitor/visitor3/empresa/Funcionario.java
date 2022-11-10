@@ -1,5 +1,7 @@
 package main.Visitor.visitor3.empresa;
 
+import main.Visitor.visitor3.visitor.FuncionarioVisitor;
+
 public abstract class Funcionario {
 
 	private String nome;
@@ -31,4 +33,6 @@ public abstract class Funcionario {
 	public void setFeriasAGozar(int feriasAGozar) {
 		this.feriasAGozar = feriasAGozar;
 	}
+
+	public abstract void accept(FuncionarioVisitor visitor) throws Exception;
 }

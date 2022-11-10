@@ -1,5 +1,8 @@
 package main.Visitor.visitor3.empresa;
 
+
+import main.Visitor.visitor3.visitor.FuncionarioVisitor;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,4 +25,10 @@ public class Setor {
 		this.gerente = gerente;
 		funcionarios.add(gerente);
 	}
+
+	public void accept(FuncionarioVisitor visitor) throws Exception {
+		for (Funcionario func:funcionarios)
+			func.accept(visitor);
+	}
+
 }

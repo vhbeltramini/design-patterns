@@ -8,9 +8,9 @@ import java.util.List;
 public class BuildPessoa extends PessoaBuilders {
 
 	@Override
-	public Pessoa build(List data) {
-
-		new Pessoa.PessoaBuilder().email()
+	public Pessoa build(Pessoa pessoa) {
+		return new Pessoa.PessoaBuilder().email(pessoa.getEmail()).build();
 	}
+
 
 }

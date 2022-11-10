@@ -1,5 +1,8 @@
 package main.Visitor.visitor6.equipe;
 
+import main.Visitor.visitor3.visitor.FuncionarioVisitor;
+import main.Visitor.visitor6.visitor.VisitorEmpresa;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +20,9 @@ public class Funcionario {
 
 	public Funcionario(String nome, double salario, String... funcoes) {
 		this.nome = nome;
-		this.funcoes = new ArrayList<String>(Arrays.asList(funcoes));
+		this.funcoes = new ArrayList<>(Arrays.asList(funcoes));
 		this.salario = salario;
+		this.projetoAtual = "";
 	}
 	
 	public String getNome() {
@@ -45,5 +49,10 @@ public class Funcionario {
 	public String toString() {
 		return nome;
 	}
+
+	public void accept(VisitorEmpresa visitor) throws Exception {
+		visitor.visitFuncionario(this);
+	}
+
 
 }
