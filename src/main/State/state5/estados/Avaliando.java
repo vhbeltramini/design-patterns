@@ -7,10 +7,13 @@ public class Avaliando extends EstadoArtigo {
 	public Avaliando(Artigo artigo) {
 		super(artigo);
 	}
-	
-	@Override
-	public void submeter() throws Exception {
-//		 this.artigo.setEstado(new Submetido(artigo));
-	}
 
+	@Override
+	public void proxEstado() {
+		if (this.artigo.getMediaRevisao() >= this.artigo.getRevista().getNotaCorte()) {
+			this.artigo.setEstado(new AceitoParaPublicacao(this.artigo));
+		} else {
+			this.artigo.setEstado(new Reprovado(this.artigo));
+		}
+	}
 }

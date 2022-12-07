@@ -34,12 +34,15 @@ public class Sistema {
 		a2.revisao(2);
 		
 		a2.corrigido(); // apos os autores corrigirem as solicitacoes dos revisores
-		a2.correcoesRevisadas(3);
-		a2.correcoesRevisadas(3);
+		a2.correcoesRevisadas(2);
+		a2.correcoesRevisadas(2);
 		
 		a2.corrigido(); // mais algumas correcoes
-		a2.correcoesRevisadas(4);
-		a2.correcoesRevisadas(3); // Reprovado : ainda nao deu dessa vez
+		a2.correcoesRevisadas(1);
+		a2.correcoesRevisadas(1); // Reprovado : ainda nao deu dessa vez
+		a2.correcoesRevisadas(1); // Reprovado : ainda nao deu dessa vez
+		a2.correcoesRevisadas(1); // Reprovado : ainda nao deu dessa vez
+		a2.correcoesRevisadas(1); // Reprovado : ainda nao deu dessa vez
 		// os autores sao insistentes
 		Artigo a3 = new Artigo("Automatic Python Code Generation based on State Pattern");
 		a3.addAutor("John Smith");

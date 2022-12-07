@@ -7,10 +7,9 @@ public class AguardandoCorrecoes extends EstadoArtigo {
 	public AguardandoCorrecoes(Artigo artigo) {
 		super(artigo);
 	}
-	
-	@Override
-	public void submeter() throws Exception {
-//		 this.artigo.setEstado(new Submetido(artigo));
-	}
 
+	@Override
+	public void corrigido() throws Exception {
+		this.artigo.setEstado(new SubmetidoComCorrecoes(this.artigo));
+	}
 }

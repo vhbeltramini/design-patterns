@@ -7,10 +7,5 @@ public class AprovadoParaPublicacao extends EstadoArtigo {
 	public AprovadoParaPublicacao(Artigo artigo) {
 		super(artigo);
 	}
-	
-	@Override
-	public void submeter() throws Exception {
-//		 this.artigo.setEstado(new Submetido(artigo));
-	}
 
 }
