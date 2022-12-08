@@ -5,7 +5,7 @@ public class Sistema {
 	public static void main(String[] args) {
 		ArmaBase pistola = new Arma();
 		pistola.atirarComCalma();
-		/*
+
 		ArmaBase pistolaCoMira = new MiraTelescopica(pistola);
 		pistolaCoMira.atirarComCalma();
 		
@@ -23,7 +23,6 @@ public class Sistema {
 		
 		ArmaBase superMetralhadora = new Repeticao(new Repeticao(new MiraTelescopica(new BalaExplosiva(pistola))));
 		superMetralhadora.atirarComCalma();
-		*/
 	}
 
 }

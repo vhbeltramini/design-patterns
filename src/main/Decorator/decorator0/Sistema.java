@@ -7,13 +7,13 @@ public class Sistema {
 		emailB.remetente("eu@gmail.com")
 				.destino("tu@gmail.com")
 				.assunto("Alta nas Vendas")
-				.conteudo("Venho comunicar que esse m�s tivemos um faturamento 20% maior");
+				.conteudo("Venho comunicar que esse mas tivemos um faturamento 20% maior");
 		
 		Email email1 = new Email(emailB);
 		
 		emailB.destino("srsilva@gmail.com")
 				.conteudo("Prezado Sr. Silva, "+
-		           "Informo que esse m�s alcan�amos a marca recorde de 20% adicional nas vendas.");
+		           "Informo que esse mas alcançamos a marca recorde de 20% adicional nas vendas.");
 		
 		Email email2 = new Email(emailB);
 		

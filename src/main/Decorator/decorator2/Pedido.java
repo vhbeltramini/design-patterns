@@ -1,6 +1,6 @@
 package main.Decorator.decorator2;
 
-public class Pedido {
+public class Pedido implements IServicoPedido {
 
 	private double total;
 	private String estado;
@@ -9,14 +9,17 @@ public class Pedido {
 		this.total = total;
 		this.estado = "Aberto";
 	}
-	
-	public void concluir() {
-		this.estado = "Concluido";
-		// eh soh um exemplo... aqui cabe a aplicacao do padrao State
-	}
 
 	public double getTotal() {
 		return this.total;
 	}
 
+	public void addValorFrete(double valor) {
+		this.total += valor;
+	}
+
+	@Override
+	public void concluirPedido(Pedido pedido) {
+		this.estado = "Concluido";
+	}
 }
